@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpidyGX - Professional Freelance Editing Services</title>
+    <meta name="description" content="Professional freelance editing services specializing in anime, manga, and digital content creation. Video editing, photo editing, and web development services.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e8491d;
+            --secondary-color: #35424a;
+            --accent-color: #4a90e2;
+            --text-color: #333;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            background-color: rgba(244, 244, 244, 0.9);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+        }
+        
+        header {
+            background: rgba(53, 66, 74, 0.9);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        nav {
+            background: rgba(232, 73, 29, 0.9);
+            padding: 15px;
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(3px);
+        }
+        
+        footer {
+            background: rgba(53, 66, 74, 0.9);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            width: 100%;
+            font-family: 'Open Sans', sans-serif;
+            backdrop-filter: blur(5px);
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .services-list {
+            columns: 2;
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.1rem;
+            column-gap: 40px;
+        }
+        
+        .services-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            break-inside: avoid;
+        }
+        
+        .services-list li:before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .social-section {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .social-card {
+            background: var(--white);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 160px;
+            text-decoration: none;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .social-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+        
+        .social-name {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+        }
+        
+        .youtube { color: #FF0000; }
+        .instagram { color: #E1306C; }
+        .telegram { color: #0088cc; }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            margin-top: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .skills-section {
+            margin: 40px 0;
+        }
+        
+        .skill-bar {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-progress {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+            
+            .services-list {
+                columns: 1;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            nav li {
+                margin: 0 10px;
+            }
+            
+            .social-links {
+                gap: 20px;
+            }
+            
+            .social-card {
+                width: 140px;
+                padding: 20px 15px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="fade-in">
+            <h1>SpidyGX Creative Services</h1>
+            <p class="intro-text">Professional editing and design solutions for anime, manga, and digital content</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home" class="fade-in delay-1">Home</a></li>
+            <li><a href="#services" class="fade-in delay-1">Services</a></li>
+            <li><a href="#portfolio" class="fade-in delay-2">Portfolio</a></li>
+            <li><a href="#contact" class="fade-in delay-2">Contact</a></li>
+            <li><a href="#testimonials" class="fade-in delay-3">Testimonials</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container" id="home">
+        <section class="fade-in delay-1">
+            <h2>About My Services</h2>
+            <p>I'm <span class="highlight">SpidyGX</span>, a passionate <span class="highlight">creative professional</span> with <span class="highlight">4+ years of editing experience</span>, specializing in anime, manga, and digital content creation. I combine technical expertise with artistic vision to deliver high-quality results that exceed expectations.</p>
+            
+            <p>My approach focuses on understanding your unique needs and bringing your creative visions to life with precision and style. Whether you need a single project completed or ongoing creative support, I'm here to help.</p>
+            
+            <a href="#contact" class="cta-button fade-in delay-2">Get in Touch</a>
+        </section>
+        
+        <section id="services" class="fade-in delay-2">
+            <h2>Freelance Services</h2>
+            <p>I offer a comprehensive range of creative services tailored to your needs:</p>
+            
+            <ul class="services-list">
+                <li>Anime Video Editing & Effects</li>
+                <li>Manga Page Editing & Restoration</li>
+                <li>Custom Profile Picture Design</li>
+                <li>Logo Creation & Branding</li>
+                <li>Professional Video Editing</li>
+                <li>Photo Editing & Retouching</li>
+                <li>Web Design & Development</li>
+                <li>Color Correction & Grading</li>
+                <li>Motion Graphics & VFX</li>
+                <li>Fan-Sub Editing & Typesetting</li>
+                <li>Social Media Content Creation</li>
+                <li>Thumbnail Design</li>
+            </ul>
+            
+            <p>Available for both one-time projects and long-term collaborations. Let's discuss how I can help bring your project to life!</p>
+        </section>
+        
+        <section class="skills-section fade-in delay-2">
+            <h2>My Skills</h2>
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <span>Video Editing</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="skill-progress-fill" style="width: 95%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <span>Photo Editing</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <span>Web Development</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="skill-progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+            
+            <div class="skill-bar">
+                <div class="skill-name">
+                    <span>Motion Graphics</span>
+                    <span>88%</span>
+                </div>
+                <div class="skill-progress">
+                    <div class="skill-progress-fill" style="width: 88%"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="testimonials fade-in delay-3">
+            <h2>Client Testimonials</h2>
+            
+            <div class="testimonial-card">
+                <p>"SpidyGX transformed our anime fan project with incredible editing skills. The attention to detail and creative input exceeded all our expectations!"</p>
+                <div class="testimonial-author">- AnimeFan Productions</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"Working with SpidyGX on our manga restoration project was a pleasure. Delivered ahead of schedule with perfect quality every time."</p>
+                <div class="testimonial-author">- Manga Restoration Team</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p>"Our YouTube channel's growth skyrocketed after SpidyGX took over our thumbnails and editing. Highly recommended!"</p>
+                <div class="testimonial-author">- Gaming Channel XYZ</div>
+            </div>
+        </section>
+
+        <div class="social-section fade-in delay-3">
+            <h2>Connect With Me</h2>
+            <p>Check out my work or get in touch through these platforms:</p>
+            
+            <div class="social-links">
+                <a href="https://www.youtube.com/@SPIDYGX7" target="_blank" class="social-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" 
+                         alt="YouTube" 
+                         class="social-logo">
+                    <span class="social-name youtube">YouTube</span>
+                    <span>@SPIDYGX7</span>
+                </a>
+                <a href="https://www.instagram.com/spidy_gx" target="_blank" class="social-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" 
+                         alt="Instagram" 
+                         class="social-logo">
+                    <span class="social-name instagram">Instagram</span>
+                    <span>@spidy_gx</span>
+                </a>
+                <a href="https://t.me/Spidygx7" target="_blank" class="social-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png" 
+                         alt="Telegram" 
+                         class="social-logo">
+                    <span class="social-name telegram">Telegram</span>
+                    <span>@Spidygx7</span>
+                </a>
+            </div>
+        </div>
+        
+        <section id="contact" class="fade-in delay-3">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your project or have questions about my services? Reach out through any of my social platforms or email me at <span class="highlight">contact@spidygx.com</span> (example).</p>
+            
+            <p>I typically respond within 24 hours to discuss your project needs, provide quotes, and answer any questions you may have.</p>
+            
+            <a href="https://t.me/Spidygx7" target="_blank" class="cta-button">
+                <i class="fab fa-telegram"></i> Message Me on Telegram
+            </a>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> SpidyGX - Professional Freelance Editing & Design Services. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            <a href="#" style="color: white; margin: 0 10px;">Terms of Service</a>
+            <a href="#" style="color: white; margin: 0 10px;">Privacy Policy</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Update copyright year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
